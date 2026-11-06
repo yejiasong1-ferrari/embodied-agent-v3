@@ -1,0 +1,29 @@
+{
+  "recorded_on": "2026-11-07",
+  "environment": "MuJoCo simulation, V3 Studio, online multimodal model",
+  "instruction": "把青色杯子放到粉色圆柱上边",
+  "instruction_en": "Place the cyan cup on the pink cylinder.",
+  "success": true,
+  "metrics": {
+    "execution_time_s": 318.632657417038,
+    "grasp_attempts": 1,
+    "first_grasp_verified": true,
+    "first_lift_success": true,
+    "placement_success": true,
+    "recovery_attempts": 0,
+    "unexpected_contact_events": 0,
+    "llm_calls": 12,
+    "observations": 287
+  },
+  "verification": {
+    "fresh_visual_evidence": true,
+    "relation_satisfied": true,
+    "object_released": true,
+    "stable_displacement_m": 1.2286288655311015e-06
+  },
+  "automated_tests": {
+    "passed": 347,
+    "scope": "Public source snapshot includes the full local regression suite; not a task success-rate estimate."
+  },
+  "scope": "One complete online task in a designed simulated scene. Replay video is a separate reconstruction, not a recording of this run."
+}
