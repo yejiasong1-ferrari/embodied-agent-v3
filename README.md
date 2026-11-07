@@ -16,7 +16,10 @@ The central V3 change is **mandatory visual confirmation of object identity**. B
 
 ## Follow the task from words to a checked result
 
-![Six-stage closed loop. Interpret the task, observe the scene, confirm identity with a VLM, measure and track, plan and execute, then verify. Uncertainty or failure leads back to observation and bounded replanning.](docs/images/v3-closed-loop.svg)
+<picture>
+  <source media="(max-width: 860px)" srcset="docs/images/v3-closed-loop-compact.svg">
+  <img src="docs/images/v3-closed-loop.svg" alt="Six-stage closed loop. Interpret the task, observe the scene, confirm identity with a VLM, measure and track, plan and execute, then verify. Uncertainty or failure leads back to observation and bounded replanning.">
+</picture>
 
 **Understand the request.** The interpreter separates the instruction into the object to move, the reference objects, the desired spatial relation, and explicit constraints. In the example, the cyan cup is the source, the pink cylinder is the support, and “on” becomes a geometric condition for placement and final validation.
 
@@ -28,7 +31,10 @@ The central V3 change is **mandatory visual confirmation of object identity**. B
 
 ## Understand who makes each decision
 
-![Three responsibilities. The VLM establishes which visible object matches the request. RGB-D and the world model estimate geometry and observation age. Local planning and control check and execute motion. Action requires the evidence and checks together.](docs/images/v3-decision-roles.svg)
+<picture>
+  <source media="(max-width: 860px)" srcset="docs/images/v3-decision-roles-compact.svg">
+  <img src="docs/images/v3-decision-roles.svg" alt="Three responsibilities. The VLM establishes which visible object matches the request. RGB-D and the world model estimate geometry and observation age. Local planning and control check and execute motion. Action requires the evidence and checks together.">
+</picture>
 
 The VLM supplies the **semantic decision** about which instance the user means, with an image region and visible evidence. Color and depth can propose candidates and support tracking. Explicit attribute conflicts can reject a proposed identity, and local candidates alone cannot grant strict V3 identity authorization.
 
@@ -38,7 +44,10 @@ This division makes the run inspectable. A failure can be traced to uncertain id
 
 ## See how V3 handles an unclear view
 
-![Observation policy. Routine captures use 640 by 480. Missing detail can trigger 1280 by 960 capture, occlusion can trigger a safely planned viewpoint change, and ambiguity can trigger candidate comparison. Identity and geometry are checked again before acting.](docs/images/v3-active-observation.svg)
+<picture>
+  <source media="(max-width: 860px)" srcset="docs/images/v3-active-observation-compact.svg">
+  <img src="docs/images/v3-active-observation.svg" alt="Observation policy. Routine captures use 640 by 480. Missing detail can trigger 1280 by 960 capture, occlusion can trigger a safely planned viewpoint change, and ambiguity can trigger candidate comparison. Identity and geometry are checked again before acting.">
+</picture>
 
 Higher resolution helps with small visible features. A new viewpoint helps expose a hidden side or distinguish an occluder from the object itself. Candidate comparison asks the model to apply the instruction consistently across relevant alternatives. V3 uses these observations to build more evidence and can stop with an explicit reason when it remains unresolved.
 
@@ -53,7 +62,10 @@ This is the original 640 × 480 RGB image from a visual identity request in the 
 
 ## Inspect the run in Studio
 
-![Data boundaries. Studio provides a rotatable scene and task events for the human observer. The agent uses wrist RGB-D, VLM identity evidence, the estimated world, robot state, and contact feedback. Scene object truth is reserved for construction and test oracles.](docs/images/v3-data-boundaries.svg)
+<picture>
+  <source media="(max-width: 860px)" srcset="docs/images/v3-data-boundaries-compact.svg">
+  <img src="docs/images/v3-data-boundaries.svg" alt="Data boundaries. Studio provides a rotatable scene and task events for the human observer. The agent uses wrist RGB-D, VLM identity evidence, the estimated world, robot state, and contact feedback. Scene object truth is reserved for construction and test oracles.">
+</picture>
 
 Drag to rotate the scene, scroll to zoom, and Shift-drag to pan. The inspector exposes the current skill, camera evidence, recovery attempts, and final validation. The observer viewpoint can change while the robot continues to use its calibrated wrist camera.
 

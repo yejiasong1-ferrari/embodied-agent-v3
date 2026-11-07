@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="856" viewBox="0 0 760 856" role="img" aria-labelledby="title desc">
+<title id="title">选择能补足证据的观察</title>
+<desc id="desc">适合窄屏的观察策略图。</desc>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#8edce5" stroke-width="1.6"/></marker>
+<marker id="retry" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#edc68d" stroke-width="1.6"/></marker>
+<marker id="green" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#a4dfb9" stroke-width="1.6"/></marker>
+</defs>
+<rect width="760" height="856" rx="20" fill="#101820"/>
+<text x="40" y="55" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="650" text-anchor="start">选择能补足证据的观察</text>
+<text x="40" y="91" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">细节、遮挡与候选歧义，分别处理。</text>
+<rect x="32" y="128" width="696" height="82" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="56" y="164" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="600" text-anchor="start">日常观察 · 640 × 480</text>
+<text x="56" y="196" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">结合完整指令评估可见候选</text>
+<path d="M380 214V241H64V624" fill="none" stroke="#edc68d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M64 340H88" fill="none" stroke="#edc68d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#retry)"/>
+<rect x="96" y="282" width="632" height="116" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="120" y="317" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" text-anchor="start">细节不足</text>
+<text x="120" y="352" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">1280 × 960 高清图</text>
+<text x="120" y="382" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">检查结构与表面特征</text>
+<path d="M732 340H744" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M64 482H88" fill="none" stroke="#edc68d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#retry)"/>
+<rect x="96" y="424" width="632" height="116" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="120" y="459" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" text-anchor="start">物体被挡住</text>
+<text x="120" y="494" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">规划安全的侧面或斜面视角</text>
+<text x="120" y="524" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">补充观察隐藏结构</text>
+<path d="M732 482H744" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M64 624H88" fill="none" stroke="#edc68d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#retry)"/>
+<rect x="96" y="566" width="632" height="116" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="120" y="601" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" text-anchor="start">候选不明确</text>
+<text x="120" y="636" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">结合指令比较相关候选</text>
+<text x="120" y="666" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">根据可见依据重新确认</text>
+<path d="M732 624H744" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M744 340V697H380V710" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="72" y="718" width="616" height="54" rx="12" fill="#162e2a" stroke="#477d66" stroke-width="1.4"/>
+<text x="380" y="753" fill="#a4dfb9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="500" text-anchor="middle">再次检查身份和几何，再决定是否执行</text>
+<text x="380" y="822" fill="#edc68d" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="middle">仍无法确认 → 说明原因并停止操作</text>
+</svg>

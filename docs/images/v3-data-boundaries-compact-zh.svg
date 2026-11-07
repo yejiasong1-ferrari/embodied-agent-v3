@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="856" viewBox="0 0 760 856" role="img" aria-labelledby="title desc">
+<title id="title">人观察场景，机器人依据证据行动</title>
+<desc id="desc">适合窄屏的观察视角与决策数据边界图。</desc>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#8edce5" stroke-width="1.6"/></marker>
+<marker id="retry" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#edc68d" stroke-width="1.6"/></marker>
+<marker id="green" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#a4dfb9" stroke-width="1.6"/></marker>
+</defs>
+<rect width="760" height="856" rx="20" fill="#101820"/>
+<text x="40" y="55" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="650" text-anchor="start">人观察场景，机器人依据证据行动</text>
+<text x="40" y="91" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">两种视角分别承担不同职责。</text>
+<rect x="32" y="130" width="696" height="130" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="54" y="167" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="600" text-anchor="start">STUDIO</text>
+<text x="54" y="207" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="600" text-anchor="start">供人查看</text>
+<text x="340" y="173" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">旋转、缩放、平移</text>
+<text x="340" y="208" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">查看技能、证据与验收</text>
+<rect x="32" y="292" width="696" height="408" rx="12" fill="#152a30" stroke="#437783" stroke-width="1.4"/>
+<text x="56" y="330" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="600" text-anchor="start">AGENT</text>
+<rect x="56" y="348" width="648" height="96" rx="12" fill="#101820" stroke="#354853" stroke-width="1.4"/>
+<text x="78" y="385" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" text-anchor="start">感知</text>
+<text x="78" y="421" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">腕部 RGB-D + VLM 身份确认</text>
+<rect x="56" y="462" width="648" height="96" rx="12" fill="#101820" stroke="#354853" stroke-width="1.4"/>
+<text x="78" y="499" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" text-anchor="start">世界模型</text>
+<text x="78" y="535" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">测得的几何 + 跟踪与测量时效</text>
+<rect x="56" y="576" width="648" height="96" rx="12" fill="#101820" stroke="#354853" stroke-width="1.4"/>
+<text x="78" y="613" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" text-anchor="start">执行技能</text>
+<text x="78" y="649" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">规划、控制、接触与验收反馈</text>
+<path d="M380 447V457" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M380 561V571" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="32" y="734" width="696" height="90" rx="12" fill="#2c271f" stroke="#79684e" stroke-width="1.4"/>
+<text x="56" y="769" fill="#edc68d" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="500" text-anchor="start">物体登记与仿真真值 → 场景构建和测试验收</text>
+<text x="56" y="802" fill="#edc68d" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">运行时决策使用传感器与估计世界模型</text>
+</svg>

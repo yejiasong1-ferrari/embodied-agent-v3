@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="734" viewBox="0 0 760 734" role="img" aria-labelledby="title desc">
+<title id="title">Three responsibilities, one action</title>
+<desc id="desc">A narrow-screen version of the VLM, measurement and control responsibilities.</desc>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#8edce5" stroke-width="1.6"/></marker>
+<marker id="retry" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#edc68d" stroke-width="1.6"/></marker>
+<marker id="green" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#a4dfb9" stroke-width="1.6"/></marker>
+</defs>
+<rect width="760" height="734" rx="20" fill="#101820"/>
+<text x="40" y="55" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="650" text-anchor="start">Three responsibilities, one action</text>
+<text x="40" y="91" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Identity, measurement and local checks work together.</text>
+<rect x="32" y="130" width="696" height="148" rx="12" fill="#192630" stroke="#8edce5" stroke-width="1.4"/>
+<text x="54" y="166" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="600" text-anchor="start">VLM</text>
+<text x="54" y="216" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" text-anchor="start">Which object?</text>
+<text x="366" y="169" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Instruction + RGB images</text>
+<text x="366" y="203" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Compare shape and attributes</text>
+<text x="366" y="237" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Instance + visual evidence</text>
+<rect x="32" y="306" width="696" height="148" rx="12" fill="#192630" stroke="#adc3f0" stroke-width="1.4"/>
+<text x="54" y="342" fill="#adc3f0" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="600" text-anchor="start">RGB-D + world model</text>
+<text x="54" y="392" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" text-anchor="start">Where is it?</text>
+<text x="366" y="345" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Depth + camera calibration</text>
+<text x="366" y="379" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Position + collision geometry</text>
+<text x="366" y="413" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Visibility + observation age</text>
+<rect x="32" y="482" width="696" height="148" rx="12" fill="#192630" stroke="#a4dfb9" stroke-width="1.4"/>
+<text x="54" y="518" fill="#a4dfb9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="600" text-anchor="start">Planning + control</text>
+<text x="54" y="568" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="600" text-anchor="start">Can it be moved?</text>
+<text x="366" y="521" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Candidates + kinematics</text>
+<text x="366" y="555" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Check collision and contact</text>
+<text x="366" y="589" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Execute and check feedback</text>
+<rect x="32" y="668" width="696" height="44" rx="12" fill="#162e2a" stroke="#477d66" stroke-width="1.4"/>
+<text x="380" y="697" fill="#a4dfb9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="500" text-anchor="middle">Identity + geometry + feasible motion → permission to act</text>
+</svg>

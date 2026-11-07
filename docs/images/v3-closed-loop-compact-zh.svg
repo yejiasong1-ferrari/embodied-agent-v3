@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="704" viewBox="0 0 760 704" role="img" aria-labelledby="title desc">
+<title id="title">从指令到经过验收的结果</title>
+<desc id="desc">适合窄屏的六阶段工作流程。</desc>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#8edce5" stroke-width="1.6"/></marker>
+<marker id="retry" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#edc68d" stroke-width="1.6"/></marker>
+<marker id="green" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#a4dfb9" stroke-width="1.6"/></marker>
+</defs>
+<rect width="760" height="704" rx="20" fill="#101820"/>
+<text x="40" y="55" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="650" text-anchor="start">从指令到经过验收的结果</text>
+<text x="40" y="91" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">操作之后，用新观测检查结果。</text>
+<rect x="32" y="130" width="330" height="126" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="52" y="159" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" text-anchor="start">01</text>
+<text x="52" y="197" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="600" text-anchor="start">理解任务</text>
+<text x="52" y="233" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">目标、参照物、关系</text>
+<rect x="398" y="130" width="330" height="126" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="418" y="159" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" text-anchor="start">02</text>
+<text x="418" y="197" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="600" text-anchor="start">观察现场</text>
+<text x="418" y="233" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">腕部 RGB-D 与安全视角</text>
+<rect x="398" y="294" width="330" height="126" rx="12" fill="#192630" stroke="#8edce5" stroke-width="1.4"/>
+<text x="418" y="323" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" text-anchor="start">03</text>
+<text x="418" y="361" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="600" text-anchor="start">确认物体身份</text>
+<text x="418" y="397" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">VLM 看图确认实例</text>
+<rect x="32" y="294" width="330" height="126" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="52" y="323" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" text-anchor="start">04</text>
+<text x="52" y="361" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="600" text-anchor="start">测量与跟踪</text>
+<text x="52" y="397" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">深度、几何、可见性、时效</text>
+<rect x="32" y="458" width="330" height="126" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="52" y="487" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" text-anchor="start">05</text>
+<text x="52" y="525" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="600" text-anchor="start">规划并执行</text>
+<text x="52" y="561" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">碰撞、抓取、搬运、释放</text>
+<rect x="398" y="458" width="330" height="126" rx="12" fill="#192630" stroke="#a4dfb9" stroke-width="1.4"/>
+<text x="418" y="487" fill="#a4dfb9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="600" text-anchor="start">06</text>
+<text x="418" y="525" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="600" text-anchor="start">重新观察与验收</text>
+<text x="418" y="561" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="start">位置关系、释放与稳定性</text>
+<path d="M366 193H390" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M563 260V286" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M394 357H370" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M197 424V450" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M366 521H390" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="32" y="623" width="696" height="49" rx="12" fill="#2c271f" stroke="#79684e" stroke-width="1.4"/>
+<text x="380" y="655" fill="#edc68d" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="400" text-anchor="middle">证据不足或失败 → 重新观察与规划</text>
+</svg>

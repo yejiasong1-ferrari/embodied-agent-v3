@@ -16,7 +16,10 @@ V3 在 V2 执行系统上的主要升级，是**把“模型根据现场图片�
 
 ## 沿着一条指令，理解机器人怎样工作
 
-![六阶段闭环。理解任务、观察现场、由视觉语言模型确认物体身份、测量并跟踪、规划执行、重新观察并验收。证据不足或动作失败时，重新观察和规划，受任务预算限制。](docs/images/v3-closed-loop-zh.svg)
+<picture>
+  <source media="(max-width: 860px)" srcset="docs/images/v3-closed-loop-compact-zh.svg">
+  <img src="docs/images/v3-closed-loop-zh.svg" alt="六阶段闭环。理解任务、观察现场、由视觉语言模型确认物体身份、测量并跟踪、规划执行、重新观察并验收。证据不足或动作失败时，重新观察和规划，受任务预算限制。">
+</picture>
 
 **先把指令变成能检查的目标。** 任务理解模块提取要移动的物体、参照物、位置关系和用户明确要求。例如青杯是抓取对象，粉色圆柱是支撑物，“放到上边”需要满足放置与验收的几何条件。
 
@@ -28,7 +31,10 @@ V3 在 V2 执行系统上的主要升级，是**把“模型根据现场图片�
 
 ## 看清模型与本地程序各自负责什么
 
-![模块分工。VLM 判断用户指的是哪个可见实例，RGB-D 与世界模型测量位置和几何，本地规划控制检查并执行动作。执行许可需要三类证据共同满足。](docs/images/v3-decision-roles-zh.svg)
+<picture>
+  <source media="(max-width: 860px)" srcset="docs/images/v3-decision-roles-compact-zh.svg">
+  <img src="docs/images/v3-decision-roles-zh.svg" alt="模块分工。VLM 判断用户指的是哪个可见实例，RGB-D 与世界模型测量位置和几何，本地规划控制检查并执行动作。执行许可需要三类证据共同满足。">
+</picture>
 
 VLM 提供**语义身份判断**，说明选中了哪个实例、对应哪块图像区域，以及依据哪些可见特征。颜色与深度可以提出候选、帮助跟踪，明确的属性矛盾也可以否决模型提议。严格 V3 模式下，本地候选本身不能代替模型身份凭据。
 
@@ -38,7 +44,10 @@ RGB-D 提供**位置和形状的实际测量**。规划器与控制器依据这�
 
 ## 一张图片不够时，怎样补充观察
 
-![补充观察策略。日常使用 640×480。细节不足时采集 1280×960，遮挡时规划新视角，候选不明确时结合指令比较。补充之后重新检查身份和几何，仍无法确定就说明原因并停止。](docs/images/v3-active-observation-zh.svg)
+<picture>
+  <source media="(max-width: 860px)" srcset="docs/images/v3-active-observation-compact-zh.svg">
+  <img src="docs/images/v3-active-observation-zh.svg" alt="补充观察策略。日常使用 640×480。细节不足时采集 1280×960，遮挡时规划新视角，候选不明确时结合指令比较。补充之后重新检查身份和几何，仍无法确定就说明原因并停止。">
+</picture>
 
 高清图像用于看清已经可见的小特征。侧面或斜面观察用于露出被挡住的结构，也有助于区分物体轮廓和遮挡边缘。候选比较让模型结合完整指令，对相关备选物体使用一致的判断标准。证据仍不足时，系统会明确报告原因。
 
@@ -53,7 +62,10 @@ RGB-D 提供**位置和形状的实际测量**。规划器与控制器依据这�
 
 ## 在 Studio 中检查机器人的工作
 
-![数据边界。Studio 给人提供可旋转的场景和执行事件，Agent 使用腕部 RGB-D、VLM 身份依据、估计世界模型及机器人状态和接触反馈。物体仿真真值用于场景构建与测试验收。](docs/images/v3-data-boundaries-zh.svg)
+<picture>
+  <source media="(max-width: 860px)" srcset="docs/images/v3-data-boundaries-compact-zh.svg">
+  <img src="docs/images/v3-data-boundaries-zh.svg" alt="数据边界。Studio 给人提供可旋转的场景和执行事件，Agent 使用腕部 RGB-D、VLM 身份依据、估计世界模型及机器人状态和接触反馈。物体仿真真值用于场景构建与测试验收。">
+</picture>
 
 拖动场景可以旋转，滚轮缩放，Shift 拖动平移。右侧面板展示当前技能、相机证据、恢复尝试和最终验收。人可以自由调整观察角度，机器人仍通过自身标定过的腕部相机获得感知信息。
 
