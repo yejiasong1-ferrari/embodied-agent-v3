@@ -8,7 +8,7 @@
 
 ## 先看两段真实任务录像
 
-以下是 **V3 Studio 实际调用在线视觉语言模型、运行 MuJoCo 物理仿真的录屏**。每个任务默认展示 **2 倍速**，展开后可看 **1.5 倍速**；机器人原始执行耗时与视频播放时长分别标注。
+以下是 **V3 Studio 实际调用在线视觉语言模型、运行 MuJoCo 物理仿真的录屏**。每个任务默认展示 **2 倍速**，展开后可看 **1 倍原速**；机器人原始执行耗时与视频播放时长分别标注。
 
 ### 01 · 把蓝色盒子放到绿色积木右边
 
@@ -21,9 +21,9 @@ V3 根据腕部相机图像确认两件物体，抓起蓝色盒子并规划搬�
 https://github.com/user-attachments/assets/dd9d4419-6911-4701-ab26-f4b7129a0d33
 
 <details>
-<summary><strong>展开观看 1.5 倍速 · 约 2 分 18 秒</strong></summary>
+<summary><strong>展开观看 1 倍原速 · 约 3 分 28 秒</strong></summary>
 
-https://github.com/user-attachments/assets/d4148824-34e7-42b8-8aed-364dfb8ac061
+https://github.com/user-attachments/assets/b782b579-5589-4119-bb44-b13eb619afcb
 
 </details>
 
@@ -38,9 +38,9 @@ V3 补充侧面观察，确认粉色物体的完整外形，并确认红色杯�
 https://github.com/user-attachments/assets/76b157b4-c193-40ee-99eb-f71049a145ae
 
 <details>
-<summary><strong>展开观看 1.5 倍速 · 约 1 分 39 秒</strong></summary>
+<summary><strong>展开观看 1 倍原速 · 约 2 分 29 秒</strong></summary>
 
-https://github.com/user-attachments/assets/a28ca98c-5ba2-42eb-96a9-b7149f93951f
+https://github.com/user-attachments/assets/ae37afeb-73cc-4bc1-8ff4-6af90629ae34
 
 </details>
 

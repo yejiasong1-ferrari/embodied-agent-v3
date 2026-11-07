@@ -36,18 +36,18 @@
         "metadata": "Original container metadata removed. Video-only export."
       },
       "videos": {
-        "1.5": {
-          "filename": "blue-box-right-of-green-block-1_5x.mp4",
-          "playback_speed": 1.5,
-          "duration_s": 138.333333,
-          "bytes": 4079620,
-          "sha256": "76cd5b6fdf0f7995864a612150902c0c194729c5d289bffdcaf74f5cccead978",
+        "1": {
+          "filename": "blue-box-right-of-green-block-1x.mp4",
+          "playback_speed": 1,
+          "duration_s": 207.5,
+          "bytes": 5047447,
+          "sha256": "b134259968c84cfd5441190e899d64a252410a9df63cb87c3a95766d6ecc8ea5",
           "width": 1920,
           "height": 1248,
           "fps": 24,
           "codec": "H.264",
           "audio": false,
-          "url": "https://github.com/user-attachments/assets/d4148824-34e7-42b8-8aed-364dfb8ac061"
+          "url": "https://github.com/user-attachments/assets/b782b579-5589-4119-bb44-b13eb619afcb"
         },
         "2": {
           "filename": "blue-box-right-of-green-block-2x.mp4",
@@ -100,18 +100,18 @@
         "metadata": "Original container metadata removed. Video-only export."
       },
       "videos": {
-        "1.5": {
-          "filename": "pink-cylinder-on-red-cup-1_5x.mp4",
-          "playback_speed": 1.5,
-          "duration_s": 99.333333,
-          "bytes": 3308052,
-          "sha256": "c60c8aafb73447f3e4e6e976feb7417b60d2ef4ec8d496c9d7e14d1165760a08",
+        "1": {
+          "filename": "pink-cylinder-on-red-cup-1x.mp4",
+          "playback_speed": 1,
+          "duration_s": 149.0,
+          "bytes": 4033647,
+          "sha256": "e8acf74b589941ddd4533ab320d425be2dab9accb772b4281fcc0e9c1bbdfdd2",
           "width": 1920,
           "height": 1246,
           "fps": 24,
           "codec": "H.264",
           "audio": false,
-          "url": "https://github.com/user-attachments/assets/a28ca98c-5ba2-42eb-96a9-b7149f93951f"
+          "url": "https://github.com/user-attachments/assets/ae37afeb-73cc-4bc1-8ff4-6af90629ae34"
         },
         "2": {
           "filename": "pink-cylinder-on-red-cup-2x.mp4",

@@ -8,7 +8,7 @@
 
 ## Watch two recorded tasks
 
-These are **actual Studio screen recordings** of V3 using an online VLM and MuJoCo physics. Each task has a **2× version below** and an expandable **1.5× version**. The robot's original execution time is reported separately from video playback time.
+These are **actual Studio screen recordings** of V3 using an online VLM and MuJoCo physics. Each task has a **2× version below** and an expandable **1× original-speed version**. The robot's original execution time is reported separately from video playback time.
 
 ### 01 · Place the blue box to the right of the green block
 
@@ -21,9 +21,9 @@ V3 confirms both objects from wrist-camera images, grasps the box, and plans its
 https://github.com/user-attachments/assets/dd9d4419-6911-4701-ab26-f4b7129a0d33
 
 <details>
-<summary><strong>Watch at 1.5× · 2:18</strong></summary>
+<summary><strong>Watch at original speed (1×) · 3:28</strong></summary>
 
-https://github.com/user-attachments/assets/d4148824-34e7-42b8-8aed-364dfb8ac061
+https://github.com/user-attachments/assets/b782b579-5589-4119-bb44-b13eb619afcb
 
 </details>
 
@@ -38,9 +38,9 @@ V3 adds a side view to clarify the cylinder's shape, confirms the red cup, then 
 https://github.com/user-attachments/assets/76b157b4-c193-40ee-99eb-f71049a145ae
 
 <details>
-<summary><strong>Watch at 1.5× · 1:39</strong></summary>
+<summary><strong>Watch at original speed (1×) · 2:29</strong></summary>
 
-https://github.com/user-attachments/assets/a28ca98c-5ba2-42eb-96a9-b7149f93951f
+https://github.com/user-attachments/assets/ae37afeb-73cc-4bc1-8ff4-6af90629ae34
 
 </details>
 
