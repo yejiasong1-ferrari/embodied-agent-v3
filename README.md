@@ -1,50 +1,75 @@
-# V3 Studio · See, act, and check
+# V3 Studio · A robot that sees, acts, and checks
 
-**A simulated Franka Panda that follows a language instruction, uses a vision-language model to confirm the objects, and checks its own work after release.** V3 connects visual understanding to RGB-D geometry, collision-checked motion, physical contact, and recovery in a local, inspectable Studio.
+**Give a simulated Franka Panda a tabletop task. V3 confirms the objects from camera images, plans a feasible action, and checks the result after release.** The entire loop runs in MuJoCo and can be inspected in a local Studio.
 
-[中文介绍](README.zh-CN.md) · [How the system works](docs/v3-system.md) · [Recorded validation](docs/demo-validation.json)
+[中文介绍](README.zh-CN.md) · [System and source map](docs/v3-system.md) · [Validation record](docs/demo-validation.json) · [Earlier V2](https://github.com/yejiasong1-ferrari/embodied-agent-v2)
 
-> **One-sentence demo:** `把青色杯子放到粉色圆柱上边` — confirm the cyan cup and pink cylinder from camera images, grasp and move the cup, release it onto the cylinder, then take new observations to verify the result.
+> **One-sentence demo** — “Place the cyan cup on the pink cylinder.” → confirm both objects → measure and plan → grasp and place → release, retreat, and verify.
 
-![V3 Studio after a complete online task. The cup stands on the cylinder, the gripper has retreated, and the task panel reports successful visual validation.](docs/media/v3-studio.png)
+## Start with a complete task
 
-This screenshot is from a complete V3 Studio run using the configured online multimodal model and MuJoCo physics. That run completed with **one grasp, zero recovery attempts, and a successful final check** in approximately 319 seconds. This is one observed task; aggregate task success remains unmeasured.
+![V3 Studio after an online task. The cyan cup stands on the pink cylinder, the arm has retreated, and the task panel reports successful fresh visual validation.](docs/media/v3-studio.png)
 
-## How the robot works
+This frame comes from **V3 Studio executing the actual agent with an online multimodal model and MuJoCo physics**. The task completed with one grasp, zero recovery attempts, and an accepted final check in approximately 319 seconds. The [validation record](docs/demo-validation.json) documents that single run. Aggregate task success remains unmeasured.
 
-```mermaid
-flowchart LR
-    A[Language instruction] --> B[Wrist RGB-D observations]
-    B --> C[VLM confirms object identity]
-    C --> D[Measured geometry and world model]
-    D --> E[Grasp, path and collision checks]
-    E --> F[Physical manipulation]
-    F --> G[Fresh visual and stability checks]
-    G --> H[Report completion]
-    C -->|Unclear| B
-    E -->|Infeasible| B
-    G -->|Failed check| B
-```
+The central V3 change is **mandatory visual confirmation of object identity**. Building on V2's manipulation loop, V3 requires image evidence for the source object and every physical reference before the corresponding action can proceed.
 
-**1. Understand what to move and where it should go.** The interpreter extracts the source object, reference objects, spatial relation, and explicit constraints. For “place the cyan cup on the pink cylinder,” both objects must be identified independently. Relations such as right-of, on, and specified edge gaps are converted into conditions that the local validator can check.
+## Follow the task from words to a checked result
 
-**2. Confirm identity from images.** Routine observation uses a simulated wrist RGB-D camera at **640 × 480**. V3 can request a real **1280 × 960** capture and a safer side or oblique view when detail or shape is unclear. A multimodal model compares candidates against the full instruction and records its selected region and visible evidence. Every manipulated object and physical reference requires model confirmation. Local color and depth cues can propose or track candidates, while execution authorization comes from the visual identity evidence.
+![Six-stage closed loop. Interpret the task, observe the scene, confirm identity with a VLM, measure and track, plan and execute, then verify. Uncertainty or failure leads back to observation and bounded replanning.](docs/images/v3-closed-loop.svg)
 
-**3. Measure and plan locally.** Depth, camera calibration, and visible object surfaces provide positions, sizes, and collision geometry. The world model maintains identity, visibility, and measurement freshness separately. Local code generates grasp and placement candidates, solves inverse kinematics, checks the robot and payload against observed obstacles, and executes bounded trajectories. The language model chooses among permitted strategies where applicable. The controller enforces motion and contact constraints.
+**Understand the request.** The interpreter separates the instruction into the object to move, the reference objects, the desired spatial relation, and explicit constraints. In the example, the cyan cup is the source, the pink cylinder is the support, and “on” becomes a geometric condition for placement and final validation.
 
-**4. Manipulate with feedback.** Closing the fingers is followed by bilateral-contact checks, a small probe lift, and a larger lift check. During transport, motion, contact loss, and payload constraints are monitored. The current V3 release controller smoothly clears finger contact promptly and maintains continuous physical friction during release, addressing a reproduced failure in which an upright cup rotated while slowly disengaging from tilted fingers. This behavior applies to verified loaded releases without object-specific names or coordinates.
+**Establish visual identity and measured geometry.** The wrist camera supplies RGB, depth, and calibration. A vision-language model, or **VLM**, uses the full instruction and images to confirm the requested instances. Depth processing estimates their locations and shapes. The world model keeps identity evidence, current visibility, and measurement freshness as separate pieces of state.
 
-**5. Verify before reporting success.** The arm releases and retreats, then uses fresh observations to check the requested relation, release state, and stability. Uncertain identity, blocked routes, failed grasps, and rejected final checks lead to bounded observation/replanning or an explicit failure result. VLM confidence alone cannot override a failed geometric or safety check.
+**Execute with feedback.** Local code proposes grasps and placement regions, solves inverse kinematics, checks collisions, and validates trajectories. The fingers close, bilateral contact is checked, and a small probe lift tests whether the object follows. Transport and release continue under motion and contact checks.
 
-## The V3 change from V2
+**Observe again before completion.** The arm releases and retreats so the camera can inspect the result. Fresh observations must support the requested spatial relation, release state, and stability. Failed checks can trigger another observation or a permitted recovery action within the task budget.
 
-V3 builds on the [V2 project](https://github.com/yejiasong1-ferrari/embodied-agent-v2). Its central change is **mandatory image-based identity confirmation** before manipulation. It also separates temporary occlusion from identity conflict, supports candidate comparison and active side views, and checks identity authorization at skill and motion boundaries. Local RGB-D perception and geometric control remain essential parts of the system. This modular robotics agent uses local geometry and controllers to execute its actions.
+## Understand who makes each decision
 
-The rotatable Studio scene is a **human observer view**. The agent uses its wrist-camera observations, estimated world model, robot proprioception, and contact measurements. Simulator object names and poses are isolated to scene construction and test/evaluation oracles. Regression tests enforce this runtime boundary. See [the system description](docs/v3-system.md) for module links and limitations.
+![Three responsibilities. The VLM establishes which visible object matches the request. RGB-D and the world model estimate geometry and observation age. Local planning and control check and execute motion. Action requires the evidence and checks together.](docs/images/v3-decision-roles.svg)
+
+The VLM supplies the **semantic decision** about which instance the user means, with an image region and visible evidence. Color and depth can propose candidates and support tracking. Explicit attribute conflicts can reject a proposed identity, and local candidates alone cannot grant strict V3 identity authorization.
+
+RGB-D processing supplies **measured geometry**. The planner and controller use that geometry to decide how the robot can approach, hold, move, and release the object. Where model-assisted strategy selection is used, the model selects from permitted choices. Local collision, contact, and validation checks still apply.
+
+This division makes the run inspectable. A failure can be traced to uncertain identity, stale measurement, an infeasible grasp or route, contact loss, or a rejected final result.
+
+## See how V3 handles an unclear view
+
+![Observation policy. Routine captures use 640 by 480. Missing detail can trigger 1280 by 960 capture, occlusion can trigger a safely planned viewpoint change, and ambiguity can trigger candidate comparison. Identity and geometry are checked again before acting.](docs/images/v3-active-observation.svg)
+
+Higher resolution helps with small visible features. A new viewpoint helps expose a hidden side or distinguish an occluder from the object itself. Candidate comparison asks the model to apply the instruction consistently across relevant alternatives. V3 uses these observations to build more evidence and can stop with an explicit reason when it remains unresolved.
+
+<details>
+<summary><strong>Open an actual wrist-camera view from the demonstrated task</strong></summary>
+
+![Actual 640 by 480 wrist-camera image used during the demonstrated online run. The cyan cup is visible near the fingers, while other objects and the robot occupy the view.](docs/media/wrist-scan.jpg)
+
+This is the original 640 × 480 RGB image from a visual identity request in the demonstrated task. It shows the robot's camera view at that moment. The final Studio screenshot above shows the later outcome from the human observer camera. [Corresponding 1280 × 960 detail capture](docs/media/wrist-detail.jpg).
+
+</details>
+
+## Inspect the run in Studio
+
+![Data boundaries. Studio provides a rotatable scene and task events for the human observer. The agent uses wrist RGB-D, VLM identity evidence, the estimated world, robot state, and contact feedback. Scene object truth is reserved for construction and test oracles.](docs/images/v3-data-boundaries.svg)
+
+Drag to rotate the scene, scroll to zoom, and Shift-drag to pan. The inspector exposes the current skill, camera evidence, recovery attempts, and final validation. The observer viewpoint can change while the robot continues to use its calibrated wrist camera.
+
+Scene construction, robot adaptation, task logic, and presentation have separate responsibilities. Regression tests check the runtime boundary against simulator-object lookup shortcuts. The [system guide](docs/v3-system.md) connects these responsibilities to the implementation files.
+
+## Examine the evidence and current scope
+
+- **Complete online task.** The screenshot and [selected validation record](docs/demo-validation.json) come from the cup-on-cylinder run described above. The record includes fresh relation evidence, release state, and measured stability.
+- **Release physics regression.** A [0.2× release replay](docs/media/release-replay.mp4) reconstructs an improved release from a recorded trajectory. V3 smoothly clears the period of partial finger contact and maintains continuous physical friction during loaded release. This is a separate physics experiment. Its fixture and tests exercise real MuJoCo dynamics.
+- **347 automated tests passed.** Coverage includes identity authorization, coordinate handling, tracking continuity, geometry, collisions, grasp/release physics, spatial checks, and Studio behavior. Tests combine protocol stubs, numerical checks, physical simulation, and rendered-pixel checks. They do not establish VLM recognition accuracy or an aggregate task success rate.
+
+V3 is a research prototype evaluated in designed simulated tabletop scenes. Recognition mistakes, occlusion, merged depth components, contact sensitivity, limited tracking, and long observation/planning times remain practical limitations. Physical-hardware performance and arbitrary unseen-object performance remain unvalidated. Further work focuses on uncertainty-aware observation, instance continuity, orientation-aware recovery, and broader repeatable evaluation.
 
 ## Run locally
 
-The source and regression suite were verified with **Python 3.12 and MuJoCo 3.14 on macOS**. The Panda model is pinned as a Git submodule.
+The current snapshot was verified on **macOS with Python 3.12 and MuJoCo 3.14**. The Panda model is a pinned Git submodule. Strict V3 execution needs an available multimodal service configured locally; the repository contains a credential-free environment template.
 
 ```bash
 git clone --recurse-submodules https://github.com/yejiasong1-ferrari/embodied-agent-v3.git
@@ -54,26 +79,13 @@ python3.12 -m venv .venv
 .venv/bin/python run_studio.py --config config/v3.json
 ```
 
-V3 execution requires a reachable multimodal model configured locally. Credentials are not bundled. The environment template contains placeholders and a public service URL. Offline mode supports development and tests, while strict V3 tasks require visual model confirmation.
-
-Drag the scene to rotate, scroll to zoom, and Shift-drag to pan. The task inspector shows the current skill, observations, recovery events, and final validation. A terminal entry point is also provided:
+Enter `把青色杯子放到粉色圆柱上边` in Studio. For the terminal entry point and the regression suite:
 
 ```bash
 .venv/bin/python run_agent.py '把青色杯子放到粉色圆柱上边' --config config/v3.json --required-llm
-```
-
-## Tests and evidence
-
-```bash
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
-The current snapshot passed **347 automated tests**. These cover contracts, strict identity authorization, coordinate handling, world-model continuity, measured geometry, collision checks, grasp/release physics, spatial validation, and Studio behavior. Some tests use protocol stubs, and others use actual MuJoCo dynamics or rendered pixels. Automated test counts do not measure VLM recognition accuracy or task success rates. Rendering/UI tests need a working local graphics environment.
+Rendering and UI tests require a working graphics environment. Offline mode supports development and testing; strict V3 manipulation requires visual model confirmation.
 
-The selected public evidence includes the complete task's [validation summary](docs/demo-validation.json) and the Studio screenshot above. A short [release replay](docs/media/release-replay.mp4) reconstructs the improved release from the recorded trajectory. The replay is a separate physics experiment; the screenshot and validation summary document the complete online run. Original local logs, image archives, credentials, and development history are excluded from this publication.
-
-## Scope and research direction
-
-V3 is a MuJoCo prototype tested on a designed tabletop scene. Recognition errors, occlusion, merged depth components, contact sensitivity, limited tracking, and long observation/planning times remain practical limitations. The project has not been validated on physical hardware or arbitrary unseen objects. The next research directions are more reliable instance tracking, uncertainty-aware active perception, orientation-aware recovery, and broader repeatable evaluation.
-
-Project source is published without a project-wide license, following the author's current choice. Third-party models and dependencies retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md).
+The public snapshot excludes actual credentials, private service addresses, original local task archives, personal filesystem paths, and local development history. Project source is published without a project-wide license, following the author's current choice. Dependencies retain their upstream licenses. [Third-party notices](THIRD_PARTY_NOTICES.md).

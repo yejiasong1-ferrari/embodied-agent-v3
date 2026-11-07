@@ -1,5 +1,7 @@
 # V3 system and evidence boundaries
 
+[Illustrated project overview](../README.md) · [中文介绍](../README.zh-CN.md)
+
 V3 is a modular manipulation agent in a MuJoCo scene. The default application configuration is V3. `AgentConfig()` keeps its V2 defaults for regression compatibility. The original V2 compatibility package is retained because the test suite exercises it.
 
 ## Execution loop
@@ -29,6 +31,8 @@ The regression fixture `tests/fixtures/v3_tilted_release.json` contains numerica
 ## Evidence included in this snapshot
 
 - `docs/media/v3-studio.png` is the final Studio screenshot from a complete online task.
+- `docs/media/wrist-scan.jpg` and `docs/media/wrist-detail.jpg` are the original 640 × 480 and 1280 × 960 RGB images used in visual identity requests during that task. They contain no EXIF metadata.
+- `docs/images/` contains explanatory SVG diagrams, with English and Chinese versions. They describe the architecture and are separate from experimental evidence.
 - `docs/demo-validation.json` is a selected summary of that task's result and verification. Full local task archives are not published.
 - `docs/media/release-replay.mp4` is a separate, reconstructed physics experiment shown at 0.2× speed.
 - 347 automated tests passed in the verified macOS environment. Some tests use model stubs, some use actual dynamics or rendered images. These results are distinct from online model accuracy and aggregate task success.

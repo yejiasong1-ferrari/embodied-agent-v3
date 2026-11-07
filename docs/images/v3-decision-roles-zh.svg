@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="585" viewBox="0 0 1120 585" role="img" aria-labelledby="title desc">
+<title id="title">模型认物体，几何与控制完成动作</title>
+<desc id="desc">VLM 判断物体身份，RGB-D 测量位置与形状，本地规划与控制检查并执行动作。</desc>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#8edce5" stroke-width="1.6"/></marker>
+<marker id="retry" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#edc68d" stroke-width="1.6"/></marker>
+<marker id="green" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#a4dfb9" stroke-width="1.6"/></marker>
+</defs>
+<rect width="1120" height="585" rx="20" fill="#101820"/>
+<text x="40" y="55" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="650" text-anchor="start">模型认物体，几何与控制完成动作</text>
+<text x="40" y="91" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">每个模块提供不同证据，一起决定任务能否继续。</text>
+<rect x="40" y="142" width="300" height="294" rx="12" fill="#192630" stroke="#8edce5" stroke-width="1.4"/>
+<text x="60" y="178" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="600" text-anchor="start">VLM</text>
+<text x="60" y="224" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="600" text-anchor="start">用户指的是哪一个？</text>
+<text x="60" y="270" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">完整指令 + 实际 RGB 图像</text>
+<text x="60" y="304" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">比较外形、颜色和上下文</text>
+<text x="60" y="338" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">输出实例、区域与可见依据</text>
+<path d="M60 371H320" fill="none" stroke="#354853" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60" y="407" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="start">证据不足时请求补充观察</text>
+<rect x="410" y="142" width="300" height="294" rx="12" fill="#192630" stroke="#adc3f0" stroke-width="1.4"/>
+<text x="430" y="178" fill="#adc3f0" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="600" text-anchor="start">RGB-D + world model</text>
+<text x="430" y="224" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="600" text-anchor="start">它在哪里，是什么形状？</text>
+<text x="430" y="270" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">深度 + 标定 + 可见表面</text>
+<text x="430" y="304" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">估计位置、尺寸和碰撞几何</text>
+<text x="430" y="338" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">跟踪可见性与测量时效</text>
+<path d="M430 371H690" fill="none" stroke="#354853" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="430" y="407" fill="#adc3f0" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="start">身份与位置时效分别管理</text>
+<rect x="780" y="142" width="300" height="294" rx="12" fill="#192630" stroke="#a4dfb9" stroke-width="1.4"/>
+<text x="800" y="178" fill="#a4dfb9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="600" text-anchor="start">Planning + control</text>
+<text x="800" y="224" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="600" text-anchor="start">能否安全地完成动作？</text>
+<text x="800" y="270" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">抓取候选 + 逆运动学</text>
+<text x="800" y="304" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">碰撞、轨迹与接触检查</text>
+<text x="800" y="338" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">执行并用反馈验证操作</text>
+<path d="M800 371H1060" fill="none" stroke="#354853" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="800" y="407" fill="#a4dfb9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="start">动作必须通过本地检查</text>
+<path d="M345 289H402" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M715 289H772" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="40" y="473" width="1040" height="71" rx="12" fill="#162e2a" stroke="#477d66" stroke-width="1.4"/>
+<text x="560" y="517" fill="#a4dfb9" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="500" text-anchor="middle">身份确认 + 新鲜几何 + 可行运动 → 执行许可</text>
+</svg>

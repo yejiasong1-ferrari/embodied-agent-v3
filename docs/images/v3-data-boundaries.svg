@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="570" viewBox="0 0 1120 570" role="img" aria-labelledby="title desc">
+<title id="title">The view for people and the evidence for the robot</title>
+<desc id="desc">Studio is an observer view. Wrist RGB-D, VLM identity, the world model and robot feedback drive decisions. Scene object truth is reserved for construction and test oracles.</desc>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#8edce5" stroke-width="1.6"/></marker>
+<marker id="retry" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#edc68d" stroke-width="1.6"/></marker>
+<marker id="green" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#a4dfb9" stroke-width="1.6"/></marker>
+</defs>
+<rect width="1120" height="570" rx="20" fill="#101820"/>
+<text x="40" y="55" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="32" font-weight="650" text-anchor="start">The view for people and the evidence for the robot</text>
+<text x="40" y="91" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="400" text-anchor="start">Studio explains the run; sensor evidence and the estimated world drive the agent.</text>
+<rect x="40" y="143" width="287" height="286" rx="12" fill="#192630" stroke="#354853" stroke-width="1.4"/>
+<text x="62" y="181" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="600" text-anchor="start">STUDIO</text>
+<text x="62" y="228" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="25" font-weight="600" text-anchor="start">Human observer</text>
+<text x="62" y="273" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start">Rotate, zoom, pan</text>
+<text x="62" y="309" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start">Inspect skills and task events</text>
+<text x="62" y="345" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="20" font-weight="400" text-anchor="start">Review evidence and checks</text>
+<text x="62" y="400" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="start">Receives frames and events</text>
+<path d="M356 155V421" stroke="#354853" stroke-dasharray="6 7" stroke-width="2"/>
+<rect x="386" y="143" width="694" height="286" rx="12" fill="#152a30" stroke="#437783" stroke-width="1.4"/>
+<text x="408" y="181" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="19" font-weight="600" text-anchor="start">AGENT</text>
+<rect x="408" y="219" width="181" height="143" rx="12" fill="#101820" stroke="#354853" stroke-width="1.4"/>
+<text x="422" y="255" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="600" text-anchor="start">Perception</text>
+<text x="422" y="292" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="400" text-anchor="start">Wrist RGB-D</text>
+<text x="422" y="321" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="400" text-anchor="start">VLM identity</text>
+<rect x="642" y="219" width="181" height="143" rx="12" fill="#101820" stroke="#354853" stroke-width="1.4"/>
+<text x="656" y="255" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="600" text-anchor="start">World model</text>
+<text x="656" y="292" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="400" text-anchor="start">Measured geometry</text>
+<text x="656" y="321" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="400" text-anchor="start">Tracking + freshness</text>
+<rect x="876" y="219" width="181" height="143" rx="12" fill="#101820" stroke="#354853" stroke-width="1.4"/>
+<text x="890" y="255" fill="#edf4f7" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="23" font-weight="600" text-anchor="start">Local skills</text>
+<text x="890" y="292" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="400" text-anchor="start">Planning + control</text>
+<text x="890" y="321" fill="#aec0cb" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" font-weight="400" text-anchor="start">Contact + validation</text>
+<path d="M593 290H633" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M827 290H867" fill="none" stroke="#8edce5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="733" y="400" fill="#8edce5" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" font-weight="400" text-anchor="middle">Robot state and contact feedback also inform checks</text>
+<rect x="40" y="471" width="1040" height="60" rx="12" fill="#2c271f" stroke="#79684e" stroke-width="1.4"/>
+<text x="64" y="508" fill="#edc68d" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-size="21" font-weight="500" text-anchor="start">Scene object truth → construction and test oracles; runtime decisions use sensor evidence</text>
+</svg>

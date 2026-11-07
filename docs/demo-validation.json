@@ -25,5 +25,11 @@
     "passed": 347,
     "scope": "Public source snapshot includes the full local regression suite; not a task success-rate estimate."
   },
-  "scope": "One complete online task in a designed simulated scene. Replay video is a separate reconstruction, not a recording of this run."
+  "scope": "One complete online task in a designed simulated scene. Replay video is a separate reconstruction, not a recording of this run.",
+  "public_evidence": {
+    "complete_task_result": "media/v3-studio.png",
+    "actual_wrist_rgb": "media/wrist-scan.jpg",
+    "actual_wrist_detail_rgb": "media/wrist-detail.jpg",
+    "separate_physics_replay": "media/release-replay.mp4"
+  }
 }
