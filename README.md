@@ -6,11 +6,56 @@
 
 > **One-sentence demo** — “Place the cyan cup on the pink cylinder.” → confirm both objects → measure and plan → grasp and place → release, retreat, and verify.
 
-## Start with a complete task
+## Watch two recorded tasks
+
+These are **actual Studio screen recordings** of V3 using an online VLM and MuJoCo physics. Each task has a **2× version below** and an expandable **1.5× version**. The robot's original execution time is reported separately from video playback time.
+
+### 01 · Place the blue box to the right of the green block
+
+V3 confirms both objects from wrist-camera images, grasps the box, and plans its transport. A blocked route triggers one recovery before the robot places the box and checks the right-of relation, release, and stability.
+
+**Recorded result:** one grasp · one route recovery · approximately **204 s** of execution · final validation passed.
+
+**2× playback · 1:44**
+
+https://github.com/user-attachments/assets/dd9d4419-6911-4701-ab26-f4b7129a0d33
+
+<details>
+<summary><strong>Watch at 1.5× · 2:18</strong></summary>
+
+https://github.com/user-attachments/assets/d4148824-34e7-42b8-8aed-364dfb8ac061
+
+</details>
+
+### 02 · Place the pink cylinder on the red cup
+
+V3 adds a side view to clarify the cylinder's shape, confirms the red cup, then grasps, transports, and stacks the cylinder. After release and retreat, a fresh observation checks that it remains on the cup.
+
+**Recorded result:** one grasp · zero failure recoveries · approximately **145 s** of execution · final validation passed.
+
+**2× playback · 1:15**
+
+https://github.com/user-attachments/assets/76b157b4-c193-40ee-99eb-f71049a145ae
+
+<details>
+<summary><strong>Watch at 1.5× · 1:39</strong></summary>
+
+https://github.com/user-attachments/assets/a28ca98c-5ba2-42eb-96a9-b7149f93951f
+
+</details>
+
+[Selected run records and video details](docs/recorded-demos.json) · [All four video versions](https://github.com/yejiasong1-ferrari/embodied-agent-v3/issues/1)
+
+Only the unrelated stop-recording system overlay after each successful result was removed. The observation, planning, recovery, manipulation, and final-check stages remain in sequence; the footer identifies playback speed. Original video metadata was removed.
+
+<details>
+<summary><strong>Earlier example: cyan cup on a pink cylinder</strong></summary>
 
 ![V3 Studio after an online task. The cyan cup stands on the pink cylinder, the arm has retreated, and the task panel reports successful fresh visual validation.](docs/media/v3-studio.png)
 
 This frame comes from **V3 Studio executing the actual agent with an online multimodal model and MuJoCo physics**. The task completed with one grasp, zero recovery attempts, and an accepted final check in approximately 319 seconds. The [validation record](docs/demo-validation.json) documents that single run. Aggregate task success remains unmeasured.
+
+</details>
 
 The central V3 change is **mandatory visual confirmation of object identity**. Building on V2's manipulation loop, V3 requires image evidence for the source object and every physical reference before the corresponding action can proceed.
 
@@ -73,7 +118,7 @@ Scene construction, robot adaptation, task logic, and presentation have separate
 
 ## Examine the evidence and current scope
 
-- **Complete online task.** The screenshot and [selected validation record](docs/demo-validation.json) come from the cup-on-cylinder run described above. The record includes fresh relation evidence, release state, and measured stability.
+- **Selected online tasks.** The two [recorded runs](docs/recorded-demos.json) above include accepted identity, fresh relation, release, and stability checks. The earlier cup-on-cylinder screenshot has a [separate validation record](docs/demo-validation.json). These selected successes do not establish an aggregate task success rate.
 - **Release physics regression.** A [0.2× release replay](docs/media/release-replay.mp4) reconstructs an improved release from a recorded trajectory. V3 smoothly clears the period of partial finger contact and maintains continuous physical friction during loaded release. This is a separate physics experiment. Its fixture and tests exercise real MuJoCo dynamics.
 - **347 automated tests passed.** Coverage includes identity authorization, coordinate handling, tracking continuity, geometry, collisions, grasp/release physics, spatial checks, and Studio behavior. Tests combine protocol stubs, numerical checks, physical simulation, and rendered-pixel checks. They do not establish VLM recognition accuracy or an aggregate task success rate.
 
